@@ -38,7 +38,6 @@ userSchema.pre('save', async function(next) {
     }
     next();
 });
-//add hashed password to new user
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
