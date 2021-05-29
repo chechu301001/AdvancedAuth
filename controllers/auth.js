@@ -66,7 +66,7 @@ exports.login = async (req, res, next) => {
     if(!validPass) return res.status(404).send('Invalid credentials.');
 
     res.status(200).send('Successfully Logged in.')
-    console.log('Successfully Logged in.')
+    console.log('Successfully Logged in.');
 
 }
 
