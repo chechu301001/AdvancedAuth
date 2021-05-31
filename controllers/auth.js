@@ -78,7 +78,7 @@ exports.forgotpassword = async (req, res, next) => {
     if(error) {
         return next(new ErrorResponse(error.details[0].message, 400))
     } else {
-        console.log('User data can be sent to DB');
+        console.log('User data is valid');
     }
 
     const {email} = req.body;
@@ -160,7 +160,7 @@ exports.resetpassword = async (req, res, next) => {
     if(error) {
         return next(new ErrorResponse(error.details[0].message, 400))
     } else {
-        console.log('User data can be sent to DB');
+        console.log('User data is valid');
     }
 
     //ROUTE HAS RESET PARAMS
