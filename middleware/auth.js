@@ -8,6 +8,7 @@ exports.protect = async (req, res, next) =>{
     if(req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         //split by space
         token = req.headers.authorization.split(" ")[1]
+        console.log('header token')
     }
     if(!token) {
         return next(new ErrorResponse("Not authorized to access this Route", 401))

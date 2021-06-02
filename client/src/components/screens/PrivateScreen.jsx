@@ -16,7 +16,6 @@ const PrivateScreen = ({history}) => {
         const fetchPrivateData = async () => {
             const config = {
                 Headers: {
-                    "Content-Type": "application/json",
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`
                 }
             }
