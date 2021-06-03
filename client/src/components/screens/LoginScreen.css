@@ -24,7 +24,7 @@
 .login-box-left{
     height: 100%;
     width: 50%;
-    padding: 2em 1.8em 4em 1.8em ;
+    padding: 4em 1.8em 4em 1.8em ;
 }
 .login-header{
     text-transform: uppercase;
@@ -39,7 +39,6 @@
     letter-spacing: 6px;
 }
 .form-control{
-    margin: 0em 0em 1.5em 0em;
     border-radius: 1em !important;
 }
 .links{
@@ -56,8 +55,18 @@
 }
 .login-subtext{
     letter-spacing: 1px;
-    margin-bottom: 1em;
-    font-weight: 300;
+    font-weight: 400;
+}
+.logtoreg{
+    color: var(--contrast1);
+    margin-bottom: 1.2em;
+}
+.login-forgotpassword{
+    color: var(--contrast1);
+    margin-left: .5em;
+}
+.error-message{
+    color: rgba(255, 0, 0, 0.801);
 }
 .btn{
     text-transform: uppercase;

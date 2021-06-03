@@ -52,6 +52,8 @@ const RegisterScreen = ({history}) => {
             const {data} = await axios.post('/api/auth/register', {username, email, password, cpassword},
             config);
 
+            console.log(data.token);
+
             localStorage.setItem("authToken", data.token);
 
             history.push("/");
@@ -74,22 +76,22 @@ const RegisterScreen = ({history}) => {
                     {error && <span className="error-message">{error}</span>}
                     <form onSubmit={registerHandler}>
                     <div className="mb-2">
-                    <input type="text" className="form-control" name="username" placeholder="Username" id="username" autocomplete="off"
+                    <input type="text" className="form-control" name="username" placeholder="Username" id="username" autoComplete="off"
                         value={user.username} onChange={handleInputs}/>
                     </div>
 
                     <div className="mb-2">
-                    <input type="email" className="form-control" name="email" placeholder="Email Address" id="email" autocomplete="off"
+                    <input type="email" className="form-control" name="email" placeholder="Email Address" id="email" autoComplete="off"
                         value={user.email} onChange={handleInputs}/>
                     </div>
 
                     <div className="mb-2">
-                    <input type="password" className="form-control" name="password" placeholder="Password" id="password" autocomplete="off"
+                    <input type="password" className="form-control" name="password" placeholder="Password" id="password" autoComplete="off"
                         value={user.password} onChange={handleInputs}/>
                     </div>
 
                     <div className="mb-2">
-                    <input type="password" className="form-control" name="cpassword" placeholder="Confirm Password" id="cpassword" autocomplete="off"
+                    <input type="password" className="form-control" name="cpassword" placeholder="Confirm Password" id="cpassword" autoComplete="off"
                         value={user.cpassword} onChange={handleInputs}/>
                     </div>
                     <div className="links">
