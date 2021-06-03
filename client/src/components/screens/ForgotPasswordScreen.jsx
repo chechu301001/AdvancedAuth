@@ -49,7 +49,7 @@ const ForgotPasswordScreen = () => {
                         will send you a RESET PASSWORD confirmation to this email id.
                     </p>
                     <div className="mb-2">
-                    <input type="email" className="form-control" name="email" placeholder="Email Adress" id="email"
+                    <input type="email" className="form-control" name="email" placeholder="Email Adress" id="email" autocomplete="off"
                         value={email} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
 

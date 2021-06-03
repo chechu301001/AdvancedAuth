@@ -56,12 +56,12 @@ const ResetPasswordScreen = ({match}) => {
                     <form onSubmit={resetPasswordHandler}>
 
                     <div className="mb-2">
-                    <input type="password" className="form-control" required name="password" placeholder="New Password" id="password"
+                    <input type="password" className="form-control" required name="password" placeholder="New Password" id="password" autocomplete="off"
                         value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
 
                     <div className="mb-2">
-                    <input type="password" className="form-control" name="cpassword" placeholder="Confirm Password" id="cpassword"
+                    <input type="password" className="form-control" name="cpassword" placeholder="Confirm Password" id="cpassword" autocomplete="off"
                         value={cpassword} onChange={(e) => setCpassword(e.target.value)}/>
                     </div>
 
