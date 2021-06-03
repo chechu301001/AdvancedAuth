@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 
@@ -17,13 +17,6 @@ const RegisterScreen = ({history}) => {
         cpassword:''
     })
     const [error, setError] = useState('');
-
-    // USEEFFECT USER IF LOGGED IN
-    // useEffect(() => {
-    //     if(!localStorage.getItem("authToken")) {
-    //         history.push("/");
-    //     }
-    // }, [history]);
 
     const handleInputs = (e) => {
         const {name, value} = e.target;

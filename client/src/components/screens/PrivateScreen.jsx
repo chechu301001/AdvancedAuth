@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import './PrivateScreen.css';
 
 const PrivateScreen = ({history}) => {
 
@@ -16,6 +17,7 @@ const PrivateScreen = ({history}) => {
         const fetchPrivateData = async () => {
             const config = {
                 Headers: {
+                    "Content-Type":"application/json",
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`
                 }
             }

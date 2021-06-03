@@ -16,13 +16,21 @@ import './app.css'
 const App = () => {
   return (
     <>
-      <Switch>
-          <PrivateRoute exact path ='/private' component={PrivateScreen}/>
-          <Route exact path = "/login" component={LoginScreen}/>
-          <Route exact path = "/register" component={RegisterScreen}/>
-          <Route exact path = "/forgotpassword" component={ForgotPasswordScreen}/>
-          <Route exact path = "/passwordreset/:resetToken" component={ResetPasswordScreen}/>
-      </Switch>
+        <Switch>
+          <PrivateRoute exact path="/" component={PrivateScreen} />
+          <Route exact path="/login" component={LoginScreen} />
+          <Route exact path="/register" component={RegisterScreen} />
+          <Route
+            exact
+            path="/forgotpassword"
+            component={ForgotPasswordScreen}
+          />
+          <Route
+            exact
+            path="/passwordreset/:resetToken"
+            component={ResetPasswordScreen}
+          />
+        </Switch>
     </>
   );
 }

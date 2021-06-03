@@ -30,7 +30,7 @@ exports.register = async (req, res, next) => {
             cpassword
         }); 
 
-        const savedUser = await user.save();
+        await user.save();
         console.log('New User Registered Successfully.');
 
         //SEND TOKEN CALL
