@@ -31,7 +31,7 @@ const RegisterScreen = ({history}) => {
         e.preventDefault();
 
         const config ={
-            Headers: {
+            header: {
                 "Content-Type": "application/json"
             }
         }
@@ -73,8 +73,10 @@ const RegisterScreen = ({history}) => {
                     <div className="register-header">
                         <h1>Register</h1>
                     </div>
-                    {error && <span className="error-message">{error}</span>}
                     <form onSubmit={registerHandler}>
+
+                    {error && <span className="error-message">{error}</span>}
+
                     <div className="mb-2">
                     <input type="text" className="form-control" name="username" placeholder="Username" id="username" autoComplete="off"
                         value={user.username} onChange={handleInputs}/>

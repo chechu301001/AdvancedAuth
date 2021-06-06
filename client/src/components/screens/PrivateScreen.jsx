@@ -7,16 +7,12 @@ const PrivateScreen = ({history}) => {
     const [error, setError] = useState('');
     const [privateData, setPrivateData] = useState('')
     
-    useEffect(() => {
-        //CAN'T COME HERE IF NOT LOGGED IN
-        if(!localStorage.getItem("authToken")) {
-            history.push("/login");
-        }
+    useEffect(() =>{
 
         //FETCHING PRIVATE DATA
         const fetchPrivateData = async () => {
             const config = {
-                Headers: {
+                headers: {
                     "Content-Type":"application/json",
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`
                 }
@@ -33,7 +29,7 @@ const PrivateScreen = ({history}) => {
 
         fetchPrivateData();
 
-    }, [history]);
+    }, []);
 
     const logoutHandler = () => {
         localStorage.removeItem("authToken")

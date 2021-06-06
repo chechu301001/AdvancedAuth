@@ -16,9 +16,9 @@ const ResetPasswordScreen = ({history,match}) => {
         e.preventDefault();
 
         const config ={
-            Headers: {
+            header: {
                 "Content-Type": "application/json"
-            }
+            },
         }
         if(password !== cpassword) {
             setPassword('')
@@ -34,6 +34,7 @@ const ResetPasswordScreen = ({history,match}) => {
             config);
 
             console.log(data);
+
             setSuccess(data.data)
             history.push('/login');
         } catch (error) {
@@ -52,9 +53,11 @@ const ResetPasswordScreen = ({history,match}) => {
                     <div className="resetpassword-header">
                         <h1>Reset password</h1>
                     </div>
+                    
+                    <form onSubmit={resetPasswordHandler}>
+
                     {error && <span className="error-message">{error}</span>}
                     {success && <span className="success-message">{success} <NavLink to="/login">Login</NavLink></span>}
-                    <form onSubmit={resetPasswordHandler}>
 
                     <div className="mb-2">
                     <input type="password" className="form-control" required name="password" placeholder="New Password" id="password" autoComplete="off"

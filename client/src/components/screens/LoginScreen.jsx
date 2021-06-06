@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 
-import "./LoginScreen.css"
+import "./LoginScreen.css";
 
 
 const LoginScreen = ({history}) => {
@@ -22,7 +22,7 @@ const LoginScreen = ({history}) => {
         e.preventDefault();
 
         const config ={
-            Headers: {
+            header: {
                 "Content-Type": "application/json"
             }
         }
@@ -50,8 +50,10 @@ const LoginScreen = ({history}) => {
                     <div className="login-header">
                         <h1>Login</h1>
                     </div>
-                    {error && <span className="error-message">{error}</span>}
+
                     <form onSubmit={loginHandler}>
+
+                    {error && <span className="error-message">{error}</span>}
 
                     <div className="mb-2">
                     <input type="email" className="form-control" name="email" placeholder="Email Adress" id="email" tabIndex={1} autoComplete="off"

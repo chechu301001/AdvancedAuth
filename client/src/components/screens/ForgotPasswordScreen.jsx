@@ -13,16 +13,17 @@ const ForgotPasswordScreen = () => {
         e.preventDefault();
 
         const config ={
-            Headers: {
+            header: {
                 "Content-Type": "application/json"
             }
         }
 
         try {
-            const {data} = await axios.post('/api/auth/forgotpassword', {email},
+            const {data} = await axios.put('/api/auth/forgotpassword', {email},
             config);
             
             setSuccess(data.data);
+            
         } catch (error) {
             setError(error.response.data.error);
             setEmail('');
@@ -36,14 +37,16 @@ const ForgotPasswordScreen = () => {
     return (
         <div className="forgotpassword-screen">
             <div className="forgotpassword-container-box">
+                    
                     <div className="forgotpassword-header">
                         <h1>Forgot password</h1>
                     </div>
-                    {error && <span className="error-message">{error}</span>}
-                    {success && <span className="success-message">{success}</span>}
-
 
                     <form onSubmit={forgotPasswordHandler}>
+
+                    {error && <span className="error-message">{error}</span>}
+                    {success && <span className="success-message">{success}</span>} 
+                      
                     <p className="forgotpassword-subtext">
                         Please enter the email address you registered your account with. We
                         will send you a RESET PASSWORD confirmation to this email id.
@@ -60,6 +63,7 @@ const ForgotPasswordScreen = () => {
                     </div>
                     </form>
             </div>
+            
         </div>
     )
 }

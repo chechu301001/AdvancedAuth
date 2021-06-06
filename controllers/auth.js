@@ -30,7 +30,7 @@ exports.register = async (req, res, next) => {
             cpassword
         }); 
 
-        await user.save();
+        const savedUser = await user.save();
         console.log('New User Registered Successfully.');
 
         //SEND TOKEN CALL
@@ -78,7 +78,7 @@ exports.forgotpassword = async (req, res, next) => {
     if(error) {
         return next(new ErrorResponse(error.details[0].message, 400))
     } else {
-        console.log('User data is valid');
+        console.log('User data can be sent to DB');
     }
 
     const {email} = req.body;
@@ -160,7 +160,7 @@ exports.resetpassword = async (req, res, next) => {
     if(error) {
         return next(new ErrorResponse(error.details[0].message, 400))
     } else {
-        console.log('User data is valid');
+        console.log('User data can be sent to DB');
     }
 
     //ROUTE HAS RESET PARAMS
@@ -191,8 +191,3 @@ exports.resetpassword = async (req, res, next) => {
         next(error);
     }
 }
-
-
-
-
-
