@@ -3,8 +3,24 @@
     --light: #adadad;
     --contrast1: #c3073f;
     --contrast2: #950740;
-  }
+}
+.messages{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.3em;
+    animation: fade 1s ease-in-out 1 alternate;
+}
+.error{
+    text-align: left;
 
+}
+.error-message{
+    color: white;
+    font-weight: 500;
+    color: black
+}
 .register-screen{
     display: flex;
     justify-content: center;
@@ -20,6 +36,13 @@
     border-radius: 1.5rem;
     box-shadow: 3px 5px 10px rgb(31, 30, 30);
     display: flex;
+    overflow: hidden;
+}
+.alert{
+    max-height: 6em !important;
+    font-size: 0.8em;
+    animation: fade 1s ease-in-out 1 alternate;
+    transition: ease-in-out;
 }
 .box-left{
     height: 100%;

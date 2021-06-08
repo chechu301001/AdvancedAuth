@@ -30,7 +30,7 @@ exports.register = async (req, res, next) => {
             cpassword
         }); 
 
-        const savedUser = await user.save();
+        await user.save();
         console.log('New User Registered Successfully.');
 
         //SEND TOKEN CALL
@@ -130,11 +130,7 @@ exports.forgotpassword = async (req, res, next) => {
             })
             request
             .then((result) => {
-                console.log(result.body)
                 console.log('Mail sent')
-                res.status(200).send(
-                    `Email has been sent to ${email}`
-                )
             })
             .catch((err) => {
                 console.log(err.statusCode)
@@ -182,10 +178,11 @@ exports.resetpassword = async (req, res, next) => {
 
         await user.save();
 
-        res.status(200).send(
-            `Hey ${user.username}.
+        res.status(200).json({
+            success:true,
+            data:`Hey ${user.username}.
             Your password has been succesfully changed`
-        )
+        })
 
     } catch (error) {
         next(error);

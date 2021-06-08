@@ -38,9 +38,15 @@ const PrivateScreen = ({history}) => {
 
     return (
         //TERNARY
-        error? <span className="error-message">{error}</span> : <>
-            <div style={{background: "green", color:"white"}}>{privateData}</div>
-            <button onClick={logoutHandler}>Logout</button>
+        error? <span className="error-message">{error}</span> : 
+        <>
+            <div className="private-screen">
+                <div>{privateData}</div>
+                <div className="d-grid gap-2 col-6 mx-auto">
+                    <button className="btn btn-primary" onClick={logoutHandler}>Logout</button>
+                </div>
+            </div>
+            
         </>
     )
 }

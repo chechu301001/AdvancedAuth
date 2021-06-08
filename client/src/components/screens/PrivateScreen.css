@@ -1,0 +1,12 @@
+:root {
+    --dark: linear-gradient(to top right, #2e1114, #2e1114e0);
+    --light: #adadad;
+    --contrast1: #c3073f;
+    --contrast2: #950740;
+}
+.private-screen{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--light);
+}
